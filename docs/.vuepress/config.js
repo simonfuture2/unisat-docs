@@ -5,8 +5,8 @@ module.exports = (_ctx) => ({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Unisat Docs",
-      description: "Developer documentation for the Unisat",
+      title: "Unilite Docs",
+      description: "Developer documentation for the Unilite",
     },
   },
 
