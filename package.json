@@ -1,6 +1,6 @@
 {
   "private": true,
-  "description": "Unisat documentation.",
+  "description": "Unilite documentation.",
   "scripts": {
     "dev": "yarn start",
     "start": "node scripts/build.js dev",
