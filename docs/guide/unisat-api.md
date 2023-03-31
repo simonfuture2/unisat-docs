@@ -1,4 +1,4 @@
-# Unisat Wallet API
+# Unilite Wallet API
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@
 ### requestAccounts
 
 ```typescript
-unisat.requestAccounts()
+unilite.requestAccounts()
 ```
 
 Connect the current account.
@@ -27,7 +27,7 @@ none
 
 ```typescript
 try {
-  let accounts = await window.unisat.requestAccounts();
+  let accounts = await window.unilite.requestAccounts();
   console.log('connect success', accounts);
 } catch (e) {
   console.log('connect failed');
@@ -39,7 +39,7 @@ try {
 ### getAccounts
 
 ```typescript
-unisat.getAccounts()
+unilite.getAccounts()
 ```
 
 Get address of current account
@@ -56,7 +56,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.getAccounts();
+  let res = await window.unilite.getAccounts();
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -67,7 +67,7 @@ try {
 ### getNetwork
 
 ```typescript
-unisat.getNetwork()
+unilite.getNetwork()
 ```
 
 get network
@@ -84,7 +84,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.getNetwork();
+  let res = await window.unilite.getNetwork();
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -96,7 +96,7 @@ try {
 ### switchNetwork
 
 ```typescript
-unisat.switchNetwork(network)
+unilite.switchNetwork(network)
 ```
 
 switch network
@@ -113,7 +113,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.switchNetwork("livenet");
+  let res = await window.unilite.switchNetwork("livenet");
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -128,7 +128,7 @@ try {
 ### getPublicKey
 
 ```typescript
-unisat.getPublicKey()
+unilite.getPublicKey()
 ```
 
 Get publicKey of current account.
@@ -145,7 +145,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.getPublicKey();
+  let res = await window.unilite.getPublicKey();
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -159,7 +159,7 @@ try {
 ### getBalance
 
 ```typescript
-unisat.getBalance()
+unilite.getBalance()
 ```
 
 Get BTC balance
@@ -181,7 +181,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.getBalance();
+  let res = await window.unilite.getBalance();
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -197,7 +197,7 @@ try {
 ### getInscriptions (todo)
 
 ```typescript
-unisat.getInscriptions()
+unilite.getInscriptions()
 ```
 
 Get Inscriptions (Max to 100)
@@ -222,7 +222,7 @@ none
 
 ```typescript
 try {
-  let res = await window.unisat.getInscriptions();
+  let res = await window.unilite.getInscriptions();
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -235,13 +235,13 @@ try {
 
 
 
-### sendBitcoin
+### sendLitecoin
 
 ```typescript
-unisat.sendBitcoin(toAddress, satoshis)
+unilite.sendBitcoin(toAddress, satoshis)
 ```
 
-Send BTC
+Send LTC
 
 #### Parameters
 
@@ -257,7 +257,7 @@ Send BTC
 
 ```typescript
 try {
-  let txid = await window.unisat.sendBitcoin("tb1qrn7tvhdf6wnh790384ahj56u0xaa0kqgautnnz",1000);
+  let txid = await window.unilite.sendLitecoin("tb1qrn7tvhdf6wnh790384ahj56u0xaa0kqgautnnz",1000);
   console.log(txid)
 } catch (e) {
   console.log(e);
@@ -267,7 +267,7 @@ try {
 ### sendInscription (todo)
 
 ```typescript
-unisat.sendInscription(options)
+unilite.sendInscription(options)
 ```
 
 Send Inscription
@@ -287,7 +287,7 @@ Send Inscription
 
 ```typescript
 try {
-  let {txid} = await window.unisat.sendInscription({
+  let {txid} = await window.unilite.sendInscription({
     id:"e9b86a063d78cc8a1ed17d291703bcc95bcd521e087ab0c7f1621c9c607def1ai0",
     address:"tb1q8h8s4zd9y0lkrx334aqnj4ykqs220ss7mjxzny"
   });
@@ -300,7 +300,7 @@ try {
 ### signMessage
 
 ```typescript
-unisat.signMessage(msg[, address])
+unilite.signMessage(msg[, address])
 ```
 
 sign message
@@ -317,7 +317,7 @@ sign message
 
 ```typescript
 try {
-  let res = await window.unisat.signMessage("abcdefghijk123456789");
+  let res = await window.unilite.signMessage("abcdefghijk123456789");
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -329,7 +329,7 @@ try {
 ### signTx (todo)
 
 ```typescript
-unisat.signTx(txHex, inputInfos)
+unilite.signTx(txHex, inputInfos)
 ```
 
 Sign transaction
@@ -354,7 +354,7 @@ Sign transaction
 
 ```typescript
 try {
-  let res = await window.unisat.signTx("",[]);
+  let res = await window.unilite.signTx("",[]);
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -364,7 +364,7 @@ try {
 ### pushTx
 
 ```typescript
-unisat.pushTx(options)
+unilite.pushTx(options)
 ```
 
 Push Transaction
@@ -382,7 +382,7 @@ Push Transaction
 
 ```typescript
 try {
-  let txid = await window.unisat.pushTx({
+  let txid = await window.unilite.pushTx({
     rawtx:"0200000000010135bd7d..."
   });
   console.log(txid)
@@ -397,7 +397,7 @@ try {
 ### signPsbt
 
 ```typescript
-unisat.signPsbt(psbtHex)
+unilite.signPsbt(psbtHex)
 ```
 
 Sign PSBT  
@@ -416,7 +416,7 @@ This method will traverse all inputs that match the current address to sign.
 
 ```typescript
 try {
-  let res = await window.unisat.signPsbt("70736274ff01007d....");
+  let res = await window.unilite.signPsbt("70736274ff01007d....");
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -426,7 +426,7 @@ try {
 ### pushPsbt
 
 ```typescript
-unisat.pushPsbt(psbtHex)
+unilite.pushPsbt(psbtHex)
 ```
 Push transaction
 #### Parameters
@@ -441,7 +441,7 @@ Push transaction
 
 ```typescript
 try {
-  let res = await window.unisat.pushPsbt("70736274ff01007d....");
+  let res = await window.unilite.pushPsbt("70736274ff01007d....");
   console.log(res)
 } catch (e) {
   console.log(e);
@@ -454,8 +454,8 @@ try {
 ### accountsChanged
 
 ```typescript
-unisat.on('accountsChanged', handler: (accounts: Array<string>) => void);
-unisat.removeListener('accountsChanged', handler: (accounts: Array<string>) => void);
+unilite.on('accountsChanged', handler: (accounts: Array<string>) => void);
+unilite.removeListener('accountsChanged', handler: (accounts: Array<string>) => void);
 ```
 
 The `accountsChanged` will be emitted whenever the user's exposed account address changes.
@@ -465,8 +465,8 @@ The `accountsChanged` will be emitted whenever the user's exposed account addres
 ### networkChanged
 
 ```typescript
-unisat.on('networkChanged', handler: (network: string) => void);
-unisat.removeListener('networkChanged', handler: (network: string) => void);
+unilite.on('networkChanged', handler: (network: string) => void);
+unilite.removeListener('networkChanged', handler: (network: string) => void);
 ```
 
 The `networkChanged` will be emitted whenever the user's network changes.
